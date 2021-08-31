@@ -4,20 +4,21 @@ import Link from 'next/link';
 export const getServerSideProps = async (context) => {
     const path = context?.params?.myPage?.[0];
 
-    if (path === 'myPage') {
+    if (path === 'badRedirect') {
         return {
-            props: {content: "Hello world!"}
+            props: {},
+            redirect: {destination: '/myPage#myHash', permanent: false},
         }
     }
 
     return {
-        props: {},
-        redirect: {destination: '/myPage', permanent: false},
+        props: {content: "Content McContentface"}
     }
 };
 
 const MyPage = (props) => {
     const {content, __N_REDIRECT} = props;
+    console.log("Props received: ", props);
 
     return (
         <div>
@@ -27,7 +28,7 @@ const MyPage = (props) => {
                     <br/><br/>
                     <Link href={"/badRedirect"}>{"Redirect via dynamic catch-all route. Will render with incorrect props if the current url includes a #hash"}</Link>
                     <br/><br/>
-                    {`My content: ${content}`}
+                    {`My content props: ${content}`}
                 </div>
             ) : __N_REDIRECT ? (
                 <div>

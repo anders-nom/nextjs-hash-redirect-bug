@@ -1,1 +1,2 @@
-Reproduces [this issue](https://github.com/vercel/next.js/issues/20816)
+Reproduces an issue with redirects on dynamic next.js routes
+[link](https://github.com/vercel/next.js/issues/xxx)
