@@ -12,7 +12,7 @@ export const getServerSideProps = async (context) => {
     }
 
     return {
-        props: {content: "Content McContentface"}
+        props: {content: "Contenty McContentface"}
     }
 };
 
@@ -24,9 +24,9 @@ const MyPage = (props) => {
         <div>
             {content ? (
                 <div>
-                    <Link href={"/goodRedirect"}>{"Redirect via non-dynamic route (should always work)"}</Link>
+                    <Link href={"/goodRedirect"}>{"Redirect via separate route (should always produce correct props)"}</Link>
                     <br/><br/>
-                    <Link href={"/badRedirect"}>{"Redirect via dynamic catch-all route. Will render with incorrect props if the current url includes a #hash"}</Link>
+                    <Link href={"/badRedirect"}>{"Redirect via common route. Will render with incorrect props if the current url includes a #hash"}</Link>
                     <br/><br/>
                     {`My content props: ${content}`}
                 </div>
