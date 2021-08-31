@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-has-redirect-bug",
+  "name": "nextjs-hash-redirect-bug",
   "version": "0.1.0",
   "private": true,
   "scripts": {
